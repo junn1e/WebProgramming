@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>transform</title>
+    <style>
+      img {
+        width: 100px;
+      }
+    </style>
+    <script>
+      function upScale(e) {
+        const currentScale = parseFloat(e.style.transform.replace('scaleX(', '').replace(')', '') || 1);
+        const newScale = currentScale + 1;
+        e.style.transform = `scaleX(${newScale})`;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>클릭하면 2, 3, 4배로 옆으로 늘어납니다.</h2><hr>
+    <div>
+      <img src="spongebob.jpg" alt="스폰지밥" onclick="upScale(this)">
+    </div>
+  </body>
+</html>
+
